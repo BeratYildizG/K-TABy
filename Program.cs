@@ -139,7 +139,7 @@ namespace KİTABy
 
                     case "KCS":
                         Console.Clear();
-                        Console.WriteLine(bvt[1]b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                        Console.WriteLine(bvt[1] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
 
                     case "GFK":
                         Console.WriteLine(bvt[2] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
