@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,10 +42,26 @@ namespace KİTABy
                 } while (x != yon & y != sif || x != yon & y == sif || x == yon & y != sif);
             }
 
-            string[] ktg = { "Din Ve Felsefe", "Bilim Ve Teknoloji", "Tarih" };
+            
             if (x == yon & y == sif)
             {
                 Console.Clear();
+                string[] dvf = {"(TFG)Tehafütül Felasife–Muhammed Bin Ahmed El Gazzali",
+                                    "(TKR)Tefsiri Kebir–Fahruddin Er Razi",
+                                    "(AEK)Saf Aklın Eleştirisi–Immanuel Kant",
+                                    "(STT)Summa Theologica–Thomas Aquinas"};
+
+                string[] bvt = {"(İAE)İzafiyet Teorisi–Albert Einstein",
+                                         "(KCS)Kozmos–Carl Sagan",
+                                         "(GFK)Geleceğin Fiziği–Michio Kaku",
+                                         "(YZL)Yapay Zeka Devrimi–Kai Fu Lee"};
+
+
+                string[] tvm = {"(TMD)Tüfek Mikrop Ve Çelik–Jared Diamond",
+                                    "(DAİ)Devleti Aliyye–Halil İnalcık",
+                                    "(İTC)İslam Uygarlıkları Tarihi–Corci Zeydan",
+                                    "(ADB)Geç Antikçağ Dünyası–Peter Brown"};
+
                 Console.WriteLine("Giriş Yapıldı\n-------------------------------------------------------------------------");
                 Console.WriteLine("KİTABy Sitesine Hoşgeldiniz \nLütfen Aşağıdaki Ketegorilerden Birininin Parantez İçinde Belirtilen Şekilde Giriniz!");
                 Console.WriteLine("(DVF) Din Ve Felsefe |(BVT) Bilim Ve Teknoloji |(TVM) Tarih Ve Mitoloji");
@@ -54,12 +71,7 @@ namespace KİTABy
                 Console.WriteLine("----------------------------------------------------------------------------------------------------");
                 Console.Clear();
                 if (a == "DVF")
-                {                    
-                    string[] dvf = {"(TFG)Tehafütül Felasife–Muhammed Bin Ahmed El Gazzali",
-                                    "(TKR)Tefsiri Kebir–Fahruddin Er Razi",
-                                    "(AEK)Saf Aklın Eleştirisi–Immanuel Kant",
-                                    "(STT)Summa Theologica–Thomas Aquinas"};
-
+                {
                     foreach (string kitap in dvf)
                     {
                         Console.WriteLine(kitap);
@@ -73,12 +85,7 @@ namespace KİTABy
                 }
                 if (a == "BVT")
                 {
-                    string[] kitaplar = {"(İAE)İzafiyet Teorisi–Albert Einstein",
-                                         "(KCS)Kozmos–Carl Sagan",
-                                         "(GFK)Geleceğin Fiziği–Michio Kaku",
-                                         "(YZL)Yapay Zeka Devrimi–Kai Fu Lee"};
-
-                    foreach (string eser in kitaplar)
+                    foreach (string eser in bvt)
                     {
                         Console.WriteLine(eser);
                     }
@@ -91,11 +98,6 @@ namespace KİTABy
                 }
                 if (a == "TVM")
                 {
-                    string[] tvm = {"(TMD)Tüfek Mikrop Ve Çelik–Jared Diamond",
-                                    "(DAİ)Devleti Aliyye–Halil İnalcık",
-                                    "(İTC)İslam Uygarlıkları Tarihi–Corci Zeydan",
-                                    "(ADB)Geç Antikçağ Dünyası–Peter Brown"};
-
                     foreach (string kitap in tvm)
                     {
                         Console.WriteLine(kitap);
@@ -112,89 +114,61 @@ namespace KİTABy
 
                 switch (b)
                 {
+                    // din ve felsefe kategorisi
                     case "TFG":
-                        for (int i = 0; i < 100; i++)
-                        {
-                            Console.Write("-");
-                        }
-                        Console.WriteLine("\n" + b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                        Console.Clear();
+                        Console.WriteLine(dvf[0] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
 
-                    case "TKR":
-                        for (int i = 0; i < 100; i++)
-                        {
-                            Console.Write("-");
-                        }
-                        Console.WriteLine("\n" + b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                    case "TKR":                        
+                        Console.Clear();
+                        Console.WriteLine(dvf[1] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
 
                     case "AEK":
-                        for (int i = 0; i < 100; i++)
-                        {
-                            Console.Write("-");
-                        }
-                        Console.WriteLine("\n" + b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                        Console.Clear();
+                        Console.WriteLine(dvf[2] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
 
                     case "STT":
-                        for (int i = 0; i < 100; i++)
-                        {
-                            Console.Write("-");
-                        }
-                        Console.WriteLine("\n" + b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                        Console.Clear();
+                        Console.WriteLine(dvf[3] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+
+                    // bilim ve teknoloji kategorisi
 
                     case "İAE":
-                        for (int i = 0; i < 100; i++)
-                        {
-                            Console.Write("-");
-                        }
-                        Console.WriteLine("\n" + b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                        Console.Clear();
+                        Console.WriteLine(bvt[0] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
 
                     case "KCS":
-                        for (int i = 0; i < 100; i++)
-                        {
-                            Console.Write("-");
-                        }
-                        Console.WriteLine("\n" + b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                        Console.Clear();
+                        Console.WriteLine(bvt[1]b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
 
                     case "GFK":
-                        for (int i = 0; i < 100; i++)
-                        {
-                            Console.Write("-");
-                        }
-                        Console.WriteLine("\n" + b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                        Console.WriteLine(bvt[2] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
 
                     case "YZL":
-                        for (int i = 0; i < 100; i++)
-                        {
-                            Console.Write("-");
-                        }
-                        Console.WriteLine("\n" + b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                        Console.Clear();
+                        Console.WriteLine(bvt[3] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+
+                    // tarih ve mitoloji kategorisi
 
                     case "TMD":
-                        for (int i = 0; i < 100; i++)
-                        {
-                            Console.Write("-");
-                        }
-                        Console.WriteLine("\n" + b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                        Console.Clear();
+                        Console.WriteLine(tvm[0] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
 
                     case "DAİ":
-                        for (int i = 0; i < 100; i++)
-                        {
-                            Console.Write("-");
-                        }
-                        Console.WriteLine("\n" + b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                        Console.Clear();
+                        Console.WriteLine(tvm[1] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
 
                     case "İTC":
-                        for (int i = 0; i < 100; i++)
-                        {
-                            Console.Write("-");
-                        }
-                        Console.WriteLine("\n" + b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                        Console.Clear();
+                        Console.WriteLine(tvm[2] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
 
                     case "ADB":
-                        for (int i = 0; i < 100; i++)
-                        {
-                            Console.Write("-");
-                        }
-                        Console.WriteLine("\n" + b + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+                        Console.Clear();
+                        Console.WriteLine(tvm[3] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
+
+                    // uygun değerler girilmediği takdirde
+                    default:
+                        Console.WriteLine("Lütfen Uygun Değerler Giriniz"); break;
                 }
             }
 
