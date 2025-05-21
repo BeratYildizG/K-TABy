@@ -54,11 +54,17 @@ namespace KİTABy
                 Console.WriteLine("----------------------------------------------------------------------------------------------------");
                 Console.Clear();
                 if (a == "DVF")
-                {
-                    Console.WriteLine("(TFG)Tehafütül Felasife-Muhammed Bin Ahmed El Gazzali");
-                    Console.WriteLine("(TKR)Tefsiri Kebir-Fahruddin Er Razi");
-                    Console.WriteLine("(AEK)Saf Aklın Eleştirisi–Immanuel Kant");
-                    Console.WriteLine("(STT)Summa Theologica–Thomas Aquinas");
+                {                    
+                    string[] dvf = {"(TFG)Tehafütül Felasife–Muhammed Bin Ahmed El Gazzali",
+                                    "(TKR)Tefsiri Kebir–Fahruddin Er Razi",
+                                    "(AEK)Saf Aklın Eleştirisi–Immanuel Kant",
+                                    "(STT)Summa Theologica–Thomas Aquinas"};
+
+                    foreach (string kitap in dvf)
+                    {
+                        Console.WriteLine(kitap);
+                    }
+
                     for (int i = 0; i < 100; i++)
                     {
                         Console.Write("-");
@@ -67,10 +73,16 @@ namespace KİTABy
                 }
                 if (a == "BVT")
                 {
-                    Console.WriteLine("(İAE)İzafiyet Teorisi-Albert Einstein");
-                    Console.WriteLine("(KCS)Kozmos–Carl Sagan");
-                    Console.WriteLine("(GFK)Geleceğin Fiziği–Michio Kaku");
-                    Console.WriteLine("(YZL)Yapay Zeka Devrimi–Kai Fu Lee");
+                    string[] kitaplar = {"(İAE)İzafiyet Teorisi–Albert Einstein",
+                                         "(KCS)Kozmos–Carl Sagan",
+                                         "(GFK)Geleceğin Fiziği–Michio Kaku",
+                                         "(YZL)Yapay Zeka Devrimi–Kai Fu Lee"};
+
+                    foreach (string eser in kitaplar)
+                    {
+                        Console.WriteLine(eser);
+                    }
+
                     for (int i = 0; i < 100; i++)
                     {
                         Console.Write("-");
@@ -79,10 +91,16 @@ namespace KİTABy
                 }
                 if (a == "TVM")
                 {
-                    Console.WriteLine("(TMD)Tüfek Mikrop Ve Çelik–Jared Diamond");
-                    Console.WriteLine("(DAİ)Devleti Aliyye-Halil İnalcık");
-                    Console.WriteLine("(İTC)İslam Uygarlıkları Tarihi–Corci Zeydan");
-                    Console.WriteLine("(ADB)Geç Antikçağ Dünyası–Peter Brown");
+                    string[] tvm = {"(TMD)Tüfek Mikrop Ve Çelik–Jared Diamond",
+                                    "(DAİ)Devleti Aliyye–Halil İnalcık",
+                                    "(İTC)İslam Uygarlıkları Tarihi–Corci Zeydan",
+                                    "(ADB)Geç Antikçağ Dünyası–Peter Brown"};
+
+                    foreach (string kitap in tvm)
+                    {
+                        Console.WriteLine(kitap);
+                    }
+
                     for (int i = 0; i < 100; i++)
                     {
                         Console.Write("-");
