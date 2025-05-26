@@ -159,6 +159,7 @@ namespace KİTABy
                                     "--------------------------------------------------------------------------"); continue;
 
                             case "GFK":
+                                Console.Clear();
                                 Console.WriteLine(bvt[2] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" +
                                     "--------------------------------------------------------------------------"); continue;
 
