@@ -30,7 +30,7 @@ namespace KİTABy
                         Console.WriteLine("Hesap Kitlendi Bay Bay");
                         break;
                     }
-                    
+                                                                                     // BU KISIMLAR HESAP GİRİŞ SİTEMİNİ OLUŞTURUYOR
                     Console.WriteLine($"{j} Hakkınız Kaldı");
                     Console.WriteLine("Lütfen İsminizi Doğru Giriniz: ");
                     x = Console.ReadLine();
@@ -42,134 +42,188 @@ namespace KİTABy
                 } while (x != yon & y != sif || x != yon & y == sif || x == yon & y != sif);
             }
 
-            
+            // BUNDAN SONRAKİLER İSE MEVZULARIN DÖNDÜĞÜ YERLERİ OLUŞTURUYOR
             if (x == yon & y == sif)
             {
-                Console.Clear();
-                string[] dvf = {"(TFG)Tehafütül Felasife–Muhammed Bin Ahmed El Gazzali",
+                Console.WriteLine("Giriş Yapıldı\n-------------------------------------------------------------------------");
+                Console.WriteLine("\t\t\t\t\t\tKİTABy Sitesine Hoşgeldiniz");
+                do
+                {
+                    
+                    string[] dvf = {"(TFG)Tehafütül Felasife–Muhammed Bin Ahmed El Gazzali",
                                     "(TKR)Tefsiri Kebir–Fahruddin Er Razi",
                                     "(AEK)Saf Aklın Eleştirisi–Immanuel Kant",
                                     "(STT)Summa Theologica–Thomas Aquinas"};
 
-                string[] bvt = {"(İAE)İzafiyet Teorisi–Albert Einstein",
-                                         "(KCS)Kozmos–Carl Sagan",
-                                         "(GFK)Geleceğin Fiziği–Michio Kaku",
-                                         "(YZL)Yapay Zeka Devrimi–Kai Fu Lee"};
+                    string[] bvt = {"(İAE)İzafiyet Teorisi–Albert Einstein",
+                                    "(KCS)Kozmos–Carl Sagan",
+                                    "(GFK)Geleceğin Fiziği–Michio Kaku",
+                                    "(YZL)Yapay Zeka Devrimi–Kai Fu Lee"};
 
 
-                string[] tvm = {"(TMD)Tüfek Mikrop Ve Çelik–Jared Diamond",
+                    string[] tvm = {"(TMD)Tüfek Mikrop Ve Çelik–Jared Diamond",
                                     "(DAİ)Devleti Aliyye–Halil İnalcık",
                                     "(İTC)İslam Uygarlıkları Tarihi–Corci Zeydan",
                                     "(ADB)Geç Antikçağ Dünyası–Peter Brown"};
 
-                Console.WriteLine("Giriş Yapıldı\n-------------------------------------------------------------------------");
-                Console.WriteLine("KİTABy Sitesine Hoşgeldiniz \nLütfen Aşağıdaki Ketegorilerden Birininin Parantez İçinde Belirtilen Şekilde Giriniz!");
-                Console.WriteLine("(DVF) Din Ve Felsefe |(BVT) Bilim Ve Teknoloji |(TVM) Tarih Ve Mitoloji");
+                    Console.WriteLine("\t\t\tDevam Etmek İstiyorsanız(İşleme Devam Edin)/Çıkmak İstiyorsanız(q)");
+                    Console.WriteLine("\t\tLütfen Aşağıdaki Ketegorilerden Birininin Parantez İçinde Belirtilen Şekilde Giriniz!");
+                    Console.WriteLine("\t\t\t(DVF) Din Ve Felsefe |(BVT) Bilim Ve Teknoloji |(TVM) Tarih Ve Mitoloji");
 
 
-                a = Console.ReadLine();
-                Console.WriteLine("----------------------------------------------------------------------------------------------------");
-                Console.Clear();
-                if (a == "DVF")
-                {
-                    foreach (string kitap in dvf)
+                    a = Console.ReadLine();
+                    Console.WriteLine("----------------------------------------------------------------------------------------------------");
+                    // BURAYA KADAR OLAN KSIM İLE BUNDAN SONRAKİ KISMI AYIRMAK MAKSADIYLA....
+
+
+                    // DİN VE FELSEFE BÖLÜMÜ
+
+                    if (a.ToUpper() == "DVF")
                     {
-                        Console.WriteLine(kitap);
+                        Console.Clear();
+                        foreach (string kitap in dvf)
+                        {
+                            Console.WriteLine(kitap);
+                        }
+
+                        for (int i = 0; i < 100; i++)
+                        {
+                            Console.Write("-");
+                        }
+                        Console.WriteLine("\nLütfen Yukarıda Yer Alan Almak İstediğiniz Kitabı Parantez İçinde Belirtilen Şekilde Yazınız");
+                        b = Console.ReadLine();
+
+
+                        // SWİTCH BAŞLANGICI
+                        switch (b.ToUpper())
+                        {
+                            // DİN VE FELSEFE KATEGORİSİ
+                            case "TFG":
+                                Console.Clear();
+                                Console.WriteLine(dvf[0] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" +
+                                    "--------------------------------------------------------------------------"); continue;
+
+                            case "TKR":
+                                Console.Clear();
+                                Console.WriteLine(dvf[1] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" +
+                                    "--------------------------------------------------------------------------"); continue;
+
+                            case "AEK":
+                                Console.Clear();
+                                Console.WriteLine(dvf[2] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" + 
+                                    "--------------------------------------------------------------------------"); continue;
+
+                            case "STT":
+                                Console.Clear();
+                                Console.WriteLine(dvf[3] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" + 
+                                    "--------------------------------------------------------------------------"); continue;
+                            // uygun değerler girilmediği takdirde
+                            default:
+                                Console.WriteLine("Lütfen Uygun Değerler Giriniz"); break;
+                        }
                     }
 
-                    for (int i = 0; i < 100; i++)
+
+
+                    // BİLİM VE TEKNOLOJİ BÖLÜMÜ
+
+                    if (a.ToUpper() == "BVT")
                     {
-                        Console.Write("-");
+                        Console.Clear();
+                        foreach (string eser in bvt)
+                        {
+                            Console.WriteLine(eser);
+                        }
+
+                        for (int i = 0; i < 100; i++)
+                        {
+                            Console.Write("-");
+                        }
+                        Console.WriteLine("\nLütfen Yukarıda Yer Alan Almak İstediğiniz Kitabı Parantez İçinde Belirtilen Şekilde Yazınız");
+                        b = Console.ReadLine();
+
+
+                        // SWİTCH BAŞLANGICI
+                        switch (b.ToUpper())
+                        {
+                            // BİLİM VE TEKNOLOJİ KATEGORİSİ                            
+
+                            case "İAE":
+                                Console.Clear();
+                                Console.WriteLine(bvt[0] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" +
+                                    "--------------------------------------------------------------------------"); continue;
+
+                            case "KCS":
+                                Console.Clear();
+                                Console.WriteLine(bvt[1] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" +
+                                    "--------------------------------------------------------------------------"); continue;
+
+                            case "GFK":
+                                Console.WriteLine(bvt[2] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" +
+                                    "--------------------------------------------------------------------------"); continue;
+
+                            case "YZL":
+                                Console.Clear();
+                                Console.WriteLine(bvt[3] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" +
+                                    "--------------------------------------------------------------------------"); continue;
+                            // uygun değerler girilmediği takdirde
+                            default:
+                                Console.WriteLine("Lütfen Uygun Değerler Giriniz"); break;
+                        }
                     }
 
-                }
-                if (a == "BVT")
-                {
-                    foreach (string eser in bvt)
+
+
+                    // TARİH VE MİTOLOJİ BÖLÜMÜ
+
+                    if (a.ToUpper() == "TVM")
                     {
-                        Console.WriteLine(eser);
+                        Console.Clear();
+                        foreach (string kitap in tvm)
+                        {
+                            Console.WriteLine(kitap);
+                        }
+
+                        for (int i = 0; i < 100; i++)
+                        {
+                            Console.Write("-");
+                        }
+                        Console.WriteLine("\nLütfen Yukarıda Yer Alan Almak İstediğiniz Kitabı Parantez İçinde Belirtilen Şekilde Yazınız");
+                        b = Console.ReadLine();
+
+
+                        // SWİTCH BAŞLANGICI
+                        switch (b.ToUpper())
+                        {
+                            // TARİH VE MİTOLOJİ KATEGORİSİ
+
+                            case "TMD":
+                                Console.Clear();
+                                Console.WriteLine(tvm[0] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" +
+                                    "--------------------------------------------------------------------------"); continue;
+
+                            case "DAİ":
+                                Console.Clear();
+                                Console.WriteLine(tvm[1] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" +
+                                    "--------------------------------------------------------------------------"); continue;
+
+                            case "İTC":
+                                Console.Clear();
+                                Console.WriteLine(tvm[2] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" +
+                                    "--------------------------------------------------------------------------"); continue;
+
+                            case "ADB":
+                                Console.Clear();
+                                Console.WriteLine(tvm[3] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır\n-----" +
+                                    "--------------------------------------------------------------------------  "); continue;
+                            // uygun değerler girilmediği takdirde
+                            default:
+                                Console.WriteLine("Lütfen Uygun Değerler Giriniz"); break;
+                        }
                     }
-
-                    for (int i = 0; i < 100; i++)
-                    {
-                        Console.Write("-");
-                    }
-
-                }
-                if (a == "TVM")
-                {
-                    foreach (string kitap in tvm)
-                    {
-                        Console.WriteLine(kitap);
-                    }
-
-                    for (int i = 0; i < 100; i++)
-                    {
-                        Console.Write("-");
-                    }
-                }
-
-                Console.WriteLine("\nLütfen Yukarıda Yer Alan Almak İstediğiniz Kitabı Parantez İçinde Belirtilen Şekilde Yazınız");
-                b = Console.ReadLine();
-
-                switch (b)
-                {
-                    // din ve felsefe kategorisi
-                    case "TFG":
-                        Console.Clear();
-                        Console.WriteLine(dvf[0] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
-
-                    case "TKR":                        
-                        Console.Clear();
-                        Console.WriteLine(dvf[1] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
-
-                    case "AEK":
-                        Console.Clear();
-                        Console.WriteLine(dvf[2] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
-
-                    case "STT":
-                        Console.Clear();
-                        Console.WriteLine(dvf[3] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
-
-                    // bilim ve teknoloji kategorisi
-
-                    case "İAE":
-                        Console.Clear();
-                        Console.WriteLine(bvt[0] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
-
-                    case "KCS":
-                        Console.Clear();
-                        Console.WriteLine(bvt[1] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
-
-                    case "GFK":
-                        Console.WriteLine(bvt[2] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
-
-                    case "YZL":
-                        Console.Clear();
-                        Console.WriteLine(bvt[3] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
-
-                    // tarih ve mitoloji kategorisi
-
-                    case "TMD":
-                        Console.Clear();
-                        Console.WriteLine(tvm[0] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
-
-                    case "DAİ":
-                        Console.Clear();
-                        Console.WriteLine(tvm[1] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
-
-                    case "İTC":
-                        Console.Clear();
-                        Console.WriteLine(tvm[2] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
-
-                    case "ADB":
-                        Console.Clear();
-                        Console.WriteLine(tvm[3] + " Adlı Kitab Alımınız Başarıyla Tamamlamıştır"); break;
-
-                    // uygun değerler girilmediği takdirde
-                    default:
-                        Console.WriteLine("Lütfen Uygun Değerler Giriniz"); break;
-                }
+                    
+                }while (a != "q");
+                Console.WriteLine("Bizi Tercih Ettiğiniz İçin Teşekkür Ederiz!!");
             }
 
             Console.ReadKey();
