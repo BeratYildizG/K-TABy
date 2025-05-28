@@ -54,6 +54,7 @@ namespace KİTABy
                 Console.WriteLine("\t\t\t\t\t\t|KİTABy Sitesine Hoşgeldiniz|");
                 do
                 {
+                    // KİTAPLARIN DİZİLERİ
                     string[] dvf = {"TFG-Tehafütül Felasife-Muhammed Gazzali",
                                     "TKR-Tefsiri Kebir-Fahruddin Er Razi",
                                     "AEK-Saf Aklın Eleştirisi-Immanuel Kant",
@@ -73,13 +74,15 @@ namespace KİTABy
                     string[] kategori = { "DVF", "BVT", "TVM" };
 
                     
-
+                    // DEVAM MI YOKSA ÇIKIŞ MI SORUSUNUN...
                     Console.WriteLine("\t\t\t\t\t|Sürdürmek İstiyorsan(d)|Çıkmak İstiyorsanız(q)|");
                     cVe = Console.ReadLine();
                     if (cVe != "d" && cVe != "q") { Console.WriteLine("Lütfen Düzgün Parametreler Giriniz"); }
 
+                    // DEVAM İSE ÇALIŞACAK ŞEKİLDE AYARLANDI
                     if (cVe == "d")
                     {
+                        //KATEGORİ GİRİŞLERİNİN BAŞLANGICI
                         Console.Clear();
                         for (int i = 0; i < 120; i++)
                         {
@@ -90,10 +93,14 @@ namespace KİTABy
                         Console.WriteLine("\t\t\t(DVF) Din Ve Felsefe |(BVT) Bilim Ve Teknoloji |(TVM) Tarih Ve Mitoloji");
                         kategoriG = Console.ReadLine().ToUpper();
 
+                        // KATEGORİ HATA TESPİT
                         if (!kategori.Contains(kategoriG))
-                        { 
-                            Console.WriteLine("\t\t\tGeçersiz Kategori Girişi Yaptınız!! Lütfen Geçerli Kategori Girişi Yapınız");
-                            continue;
+                        {
+                            do
+                            {
+                                Console.WriteLine("\t\t\tGeçersiz Kategori Girişi Yaptınız!! Lütfen Geçerli Kategori Girişi Yapınız");
+                                kategoriG = Console.ReadLine().ToUpper();
+                            } while (!kategori.Contains(kategoriG));
                         }
 
                         // BURAYA KADAR OLAN KISIM İLE BUNDAN SONRAKİ KISMI AYIRMAK MAKSADIYLA....
@@ -104,6 +111,7 @@ namespace KİTABy
                         if (kategoriG == "DVF")
                         {
                             Console.Clear();
+                            // KİTAPLARIN ŞIK GÖRÜNTÜSÜ İÇİN
                             Console.WriteLine("        Kod          |       Kitap İsmi        |        Yazar İsmi        |");
                             Console.WriteLine($"---------------------+-------------------------+--------------------------+");
                             foreach (string kitap in dvf)
@@ -122,6 +130,7 @@ namespace KİTABy
                             {
                                 Console.Write("-");
                             }
+                            // ALMAK İSTEDİĞİNİZ KİTABI VE ADETİ BELİRTİP ONA GÖRE İŞLEMLERİN YAPILDIĞI...
                             Console.WriteLine("\nLütfen Almak İstediğiniz Kitabın Kodunu Giriniz");
                             kitapG = Console.ReadLine();
 
@@ -193,6 +202,7 @@ namespace KİTABy
                         if (kategoriG == "BVT")
                         {
                             Console.Clear();
+                            // KİTAPLARIN ŞIK GÖRÜNTÜSÜ İÇİN
                             Console.WriteLine("        Kod          |       Kitap İsmi        |        Yazar İsmi        |");
                             Console.WriteLine($"---------------------+-------------------------+--------------------------+");
                             foreach (string kitap in bvt)
@@ -212,6 +222,7 @@ namespace KİTABy
                             {
                                 Console.Write("-");
                             }
+                            // ALMAK İSTEDİĞİNİZ KİTABI VE ADETİ BELİRTİP ONA GÖRE İŞLEMLERİN YAPILDIĞI...
                             Console.WriteLine("\nLütfen Almak İstediğiniz Kitabın Kodunu Giriniz");
                             kitapG = Console.ReadLine();
 
@@ -371,30 +382,41 @@ namespace KİTABy
                     }
 
                 } while (cVe != "q");
+
+                //DÖNGÜDEN ÇIKTIKTAN SONRA
                 Console.Clear();
-                Console.WriteLine("Almış Olduğunuz Kitaplar'ın Listesi");
-                for (int i = 0; i < 120; i++)
+                
+                if (userBookList.Count == 0)
                 {
-                    Console.Write("-");
+                    Console.WriteLine("Hiç Bir Kitap Almadınız!!!");
+                    Console.WriteLine("\nBizi Tercih Ettiğiniz İçin Teşekkür Ederiz!!");
                 }
-                Console.WriteLine("        Kod          |       Kitap İsmi        |        Yazar İsmi        |");
-                Console.WriteLine($"---------------------+-------------------------+--------------------------+");
-                foreach (string ubl in userBookList)
+                else 
                 {
-                    string[] bookİnfo = ubl.Split('-');
+                    Console.WriteLine("Almış Olduğunuz Kitaplar'ın Listesi");
+                    for (int i = 0; i < 120; i++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.WriteLine("        Kod          |       Kitap İsmi        |        Yazar İsmi        |");
+                    Console.WriteLine($"---------------------+-------------------------+--------------------------+");
+                    foreach (string ubl in userBookList)
+                    {
+                        string[] bookİnfo = ubl.Split('-');
 
-                    string cod = bookİnfo[0].PadRight(13).PadLeft(21);
-                    string book = bookİnfo[1].PadRight(21).PadLeft(25);
-                    string bookAuthor = bookİnfo[2].PadRight(21).PadLeft(26);
+                        string cod = bookİnfo[0].PadRight(13).PadLeft(21);
+                        string book = bookİnfo[1].PadRight(21).PadLeft(25);
+                        string bookAuthor = bookİnfo[2].PadRight(21).PadLeft(26);
 
 
-                    Console.WriteLine($"{cod}|{book}|{bookAuthor}|");
+                        Console.WriteLine($"{cod}|{book}|{bookAuthor}|");
+                    }
+                    for (int i = 0; i < 120; i++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.WriteLine("\nBizi Tercih Ettiğiniz İçin Teşekkür Ederiz!!");
                 }
-                for (int i = 0; i < 120; i++)
-                {
-                    Console.Write("-");
-                }
-                Console.WriteLine("\nBizi Tercih Ettiğiniz İçin Teşekkür Ederiz!!");
             }
 
 
